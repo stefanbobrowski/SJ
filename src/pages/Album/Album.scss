@@ -1,0 +1,61 @@
+.photo-album {
+  opacity: 0;
+  display: grid;
+  grid-gap: 4vw;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+
+  &.col-2 {
+    padding: 0 1vw;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &.show {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 2vw;
+  }
+
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, Min(10em, 100%));
+  // grid-template-rows: masonry;
+  // justify-content: center;
+  // grid-gap: 0.5rem;
+  // padding: 0.5rem;
+
+  .photo-column {
+    display: grid;
+    grid-gap: 4vw;
+    grid-template-columns: minmax(0, 1fr);
+
+    @media screen and (max-width: 767px) {
+      grid-gap: 2vw;
+    }
+  }
+
+  .photo {
+    display: block;
+    position: relative;
+    top: 100px;
+    opacity: 1;
+    // animation-delay: 1s;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+    animation-name: slideup;
+
+    @keyframes slideup {
+      from {
+        top: 200px;
+        opacity: 0;
+      }
+
+      to {
+        top: 0px;
+        opacity: 1;
+      }
+    }
+  }
+}
