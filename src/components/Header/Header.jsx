@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useHistory } from 'react-router-dom';
 
-import Instagram from '../../assets/icons/instagram.svg';
+import instagram from '../../assets/icons/instagram.svg';
+import youTube from '../../assets/icons/youtube.svg';
 
 import './Header.scss';
 
@@ -28,10 +29,17 @@ function Header() {
 
   useEffect(() => {
     return history.listen((location) => {
-      console.log(`You changed the page to: ${location.pathname}`);
       setShowMobileNav(false);
     });
   }, [history]);
+
+  useEffect(() => {
+    if (showMobileNav) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'auto';
+    }
+  }, [showMobileNav]);
 
   return (
     <header>
@@ -40,25 +48,34 @@ function Header() {
       </Link>
 
       <nav className="desktop-nav">
-        <NavLink exact activeClassName="is-active" to="/">
+        <NavLink exact className="nav-link" activeClassName="is-active" to="/">
           I
         </NavLink>
-        <NavLink exact activeClassName="is-active" to="/II">
+        <NavLink exact className="nav-link" activeClassName="is-active" to="/II">
           II
         </NavLink>
-        <NavLink exact activeClassName="is-active" to="/III">
-          III
-        </NavLink>
-        <NavLink exact activeClassName="is-active" to="/about">
+        <NavLink exact className="nav-link" activeClassName="is-active" to="/about">
           about
         </NavLink>
-        <NavLink exact activeClassName="is-active" to="/contact">
+        <NavLink exact className="nav-link" activeClassName="is-active" to="/contact">
           contact
         </NavLink>
-        <a className="instagram" href="https://www.instagram.com/susiejetta/">
-          <img src={Instagram} alt="instagram" />
+        <a
+          className="instagram"
+          href="https://www.instagram.com/susiejetta/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={instagram} alt="Instagram" title="Instagram" />
         </a>
-
+        <a
+          className="youtube"
+          href="https://www.youtube.com/channel/UCiV7zs_StQ6yv03WnLKy0vg"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={youTube} alt="YouTube" title="YouTube" />
+        </a>
         <button
           className={`mobile-nav-button ${showMobileNav ? 'close' : 'open'}`}
           onClick={() => setShowMobileNav(!showMobileNav)}
@@ -69,23 +86,33 @@ function Header() {
       </nav>
 
       <nav className={`mobile-nav ${showMobileNav ? 'show' : ''}`}>
-        <NavLink exact activeClassName="is-active" to="/">
+        <NavLink exact className="nav-link" activeClassName="is-active" to="/">
           I
         </NavLink>
-        <NavLink exact activeClassName="is-active" to="/II">
+        <NavLink exact className="nav-link" activeClassName="is-active" to="/II">
           II
         </NavLink>
-        <NavLink exact activeClassName="is-active" to="/III">
-          III
-        </NavLink>
-        <NavLink exact activeClassName="is-active" to="/about">
+        <NavLink exact className="nav-link" activeClassName="is-active" to="/about">
           about
         </NavLink>
-        <NavLink exact activeClassName="is-active" to="/contact">
+        <NavLink exact className="nav-link" activeClassName="is-active" to="/contact">
           contact
         </NavLink>
-        <a className="instagram" href="https://www.instagram.com/susiejetta/">
-          <img src={Instagram} alt="instagram" />
+        <a
+          className="mobile-instagram"
+          href="https://www.instagram.com/susiejetta/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={instagram} alt="instagram" title="Instagram" />
+        </a>
+        <a
+          className="mobile-youtube"
+          href="https://www.youtube.com/channel/UCiV7zs_StQ6yv03WnLKy0vg"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={youTube} alt="YouTube" title="YouTube" />
         </a>
       </nav>
     </header>

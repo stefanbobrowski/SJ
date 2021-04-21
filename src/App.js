@@ -9,6 +9,10 @@ import Header from './components/Header/Header.jsx';
 
 import './App.scss';
 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
 function App() {
   return (
     <div className="App">
@@ -23,9 +27,9 @@ function App() {
         <Route exact path="/II">
           <Album albumName={'II'} />
         </Route>
-        <Route exact path="/III">
+        {/* <Route exact path="/III">
           <Album albumName={'III'} />
-        </Route>
+        </Route> */}
         <Route exact path="/about">
           <About />
         </Route>

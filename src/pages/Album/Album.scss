@@ -1,61 +1,91 @@
+@import '../../styles/variables';
+
+.loading-spinner-container {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .loading-spinner {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba($theme-color, 0.3);
+    border-radius: 50%;
+    border-top-color: $theme-color;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+
+    @keyframes spin {
+      to {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    @-webkit-keyframes spin {
+      to {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+  }
+}
+
 .photo-album {
-  opacity: 0;
-  display: grid;
+  display: none;
   grid-gap: 4vw;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: start;
-
-  &.col-2 {
-    padding: 0 1vw;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  &.show {
-    opacity: 1;
-  }
+  min-height: 1000px;
 
   @media screen and (max-width: 767px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: 2vw;
   }
 
-  // display: grid;
-  // grid-template-columns: repeat(auto-fit, Min(10em, 100%));
-  // grid-template-rows: masonry;
-  // justify-content: center;
-  // grid-gap: 0.5rem;
-  // padding: 0.5rem;
+  &.col-2 {
+    padding: 0 1vw;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &.all-loaded {
+    display: grid;
+  }
 
   .photo-column {
     display: grid;
     grid-gap: 4vw;
     grid-template-columns: minmax(0, 1fr);
+    min-height: 1000px;
 
     @media screen and (max-width: 767px) {
       grid-gap: 2vw;
     }
   }
+}
 
-  .photo {
-    display: block;
-    position: relative;
-    top: 100px;
-    opacity: 1;
-    // animation-delay: 1s;
-    animation-duration: 2.5s;
-    animation-fill-mode: forwards;
-    animation-name: slideup;
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  background-color: $theme-color;
+  z-index: 10;
 
-    @keyframes slideup {
-      from {
-        top: 200px;
-        opacity: 0;
-      }
+  &:hover {
+    cursor: pointer;
+    background-color: darken($theme-color, 5%);
+  }
 
-      to {
-        top: 0px;
-        opacity: 1;
-      }
-    }
+  img {
+    width: 30px;
   }
 }

@@ -1,112 +1,135 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
+import Photo from '../../components/Photo/Photo';
+
+import TrackVisibility from 'react-on-screen';
+
+import chevronUp from '../../assets/icons/chevron-up.svg';
+
 import './Album.scss';
 
 function Album(props) {
-  const albumRef = useRef();
-
-  const [albums, setAlbums] = useState([
-    {
-      name: 'I',
-      numColumns: 2,
-      columns: [
-        ['2000/2000', '1920/1080', '2000/2000'],
-        ['1000/1000', '2000/2000', '1920/1080', '1920/1080'],
-      ],
-    },
-    {
-      name: 'II',
-      numColumns: 3,
-      columns: [
-        ['1920/1080', '2000/2000', '2000/2000', '2000/2000'],
-        ['2000/2000', '1920/1080', '2000/2000'],
-        ['2000/2000', '2000/2000', '1920/1080', '1920/1080'],
-      ],
-    },
-    {
-      name: 'III',
-      numColumns: 3,
-      columns: [
-        ['700/500', '400/300', '600/800', '100/200', '1920/1080', '300/300'],
-        ['100/200', '1920/1080', '300/300', '700/500', '400/300', '600/800'],
-        ['400/400', '300/400', '700/700', '700/500', '400/300', '600/800'],
-      ],
-    },
-  ]);
-
-  const [album, setAlbum] = useState({});
-
-  const [showAlbum, setShowAlbum] = useState(false);
-
+  const [photoCols, setPhotoCols] = useState([]);
   const [albumSize, setAlbumSize] = useState(0);
   const [loadCount, setLoadCount] = useState(1);
-
-  const [errorMessage, setErrorMessage] = useState('');
-
-  const getAlbum = (albumName) => {
-    albums.forEach((a) => {
-      if (a.name === albumName) {
-        console.log('yes this album', a);
-        setAlbum(a);
-        countPhotos(a);
-      }
-    });
-  };
-
-  const countPhotos = (a) => {
-    let count = 0;
-    a.columns.forEach((col) => {
-      count += col.length;
-    });
-    setAlbumSize(count);
-  };
+  const [showScroll, setShowScroll] = useState(false);
+  const [allLoaded, setAllLoaded] = useState(false);
 
   useEffect(() => {
-    if (props) {
-      console.log('PROPS', props);
-      setAlbum({});
-      setAlbumSize(0);
-      setShowAlbum(false);
-      setLoadCount(1);
+    window.addEventListener('scroll', checkScrollTop);
 
-      setTimeout(() => {
-        console.log('Get album');
-        getAlbum(props.albumName);
-      }, 200);
+    return () => {
+      removeEventListener('scroll', checkScrollTop);
+    };
+  }, []);
+
+  useEffect(() => {
+    // console.log('Album props: ', props.albumName);
+    setAllLoaded(false);
+    setPhotoCols([]);
+    setAlbumSize(0);
+    setLoadCount(1);
+
+    let images = [];
+
+    if (props.albumName === 'I') {
+      images = importAll(require.context('../../assets/albums/I', false, /\.(png|jpe?g|svg)$/));
+    } else if (props.albumName === 'II') {
+      images = importAll(require.context('../../assets/albums/II', false, /\.(png|jpe?g|svg)$/));
     }
-  }, [props]);
+
+    if (images.length) {
+      images.forEach((img) => {
+        let fake = new Image();
+
+        fake.onload = function () {
+          var height = fake.height;
+          var width = fake.width;
+          img.width = width;
+          img.height = height;
+        };
+
+        fake.src = img.default;
+      });
+
+      setAlbumSize(images.length);
+      const middle = Math.ceil(images.length / 2);
+      const left = images.slice(0, middle);
+      const right = images.slice(middle);
+
+      // console.log(left);
+      // console.log(right);
+
+      setPhotoCols([left, right]);
+    }
+  }, [props.albumName]);
+
+  function importAll(r) {
+    return r.keys().map(r);
+  }
+
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 400) {
+      setShowScroll(true);
+    } else {
+      setShowScroll(false);
+    }
+  };
+
+  const scrollTop = () => {
+    setTimeout(function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 1);
+  };
+
+  const finishLoading = () => {
+    setAllLoaded(true);
+
+    setTimeout(function () {
+      window.scrollTo({ top: 1, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 300);
+  };
 
   const handleLoad = () => {
     setLoadCount(loadCount + 1);
-    console.log(`Loading: ${loadCount}/${albumSize}`);
+    console.log(`Loading photos: ${loadCount}/${albumSize}`);
     if (loadCount >= albumSize) {
       console.log('Finished loading');
-      setShowAlbum(true);
+      finishLoading();
     }
   };
 
   return (
     <div className="page album">
-      {album.columns && (
-        <div className={`photo-album col-${album.numColumns} ${showAlbum ? 'show' : ''}`}>
-          {album.columns.map((photoColumn, i) => (
+      {!allLoaded ? (
+        <div className="loading-spinner-container">
+          <div className="loading-spinner"></div>{' '}
+        </div>
+      ) : (
+        <></>
+      )}
+
+      <div className={`photo-album col-2 ${allLoaded ? 'all-loaded' : ''}`}>
+        {photoCols &&
+          photoCols.map((photoCol, i) => (
             <div className="photo-column" key={i}>
-              {photoColumn.map((photo, j) => (
-                <div className="photo" key={j}>
-                  <img
-                    src={`https://picsum.photos/${photo}`}
-                    alt="pic"
-                    onLoad={() => handleLoad()}
-                  />
-                </div>
+              {photoCol.map((photo, j) => (
+                <TrackVisibility key={j} offset={50} partialVisibility once>
+                  <Photo photo={photo} handleLoad={handleLoad} />
+                </TrackVisibility>
               ))}
             </div>
           ))}
-        </div>
-      )}
-
-      {errorMessage && <h3 className="error"> {errorMessage} </h3>}
+      </div>
+      <button
+        className="scroll-to-top-button"
+        style={{ display: showScroll ? 'flex' : 'none' }}
+        onClick={scrollTop}
+      >
+        <img src={chevronUp} alt="Scroll to top" />
+      </button>
     </div>
   );
 }

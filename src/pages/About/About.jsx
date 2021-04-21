@@ -2,10 +2,15 @@ import React from 'react';
 
 import './About.scss';
 
+import logo from '../../assets/logo.png';
+
 function About(props) {
   return (
     <div className="page about">
       <div className="about-container">
+        <div className="logo-container">
+          <img src={logo} alt="Susie Jetta" />
+        </div>
         <p>
           I have been a photographer and director since I was 9 years old and I got my first paid
           photography gigs at 13. I then started to do make up at 16 and started charging girls in
@@ -35,6 +40,7 @@ function About(props) {
           <li>Styling</li>
           <li>Creative Direction</li>
         </ul>
+        <p>- Susie Jetta</p>
       </div>
     </div>
   );

@@ -1,19 +1,34 @@
+@import '../../styles/variables';
+
 .page.contact {
   flex: 1 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.email-insta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  .logo-container {
+    margin-bottom: 1rem;
+  }
 
-  align-items: center;
+  .email-insta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
-  p {
-    font-size: 1.6rem;
-    margin-right: 14vw;
+    a {
+      font-size: 1.6rem;
+      text-decoration: none;
+      color: #000;
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+
+    .instagram {
+      margin: 0 25px 0 50px;
+    }
   }
 }

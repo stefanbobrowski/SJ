@@ -9,12 +9,14 @@
 }
 
 .page {
+  position: relative;
   padding: 3vw;
 }
 
-.instagram {
+.instagram,
+.youtube {
   display: block;
-  width: 20px;
+  // width: 20px;
 }
 
 .error {
