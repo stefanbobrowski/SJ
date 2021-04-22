@@ -2,9 +2,8 @@
 
 .loading-spinner-container {
   position: fixed;
-  top: 50px;
+  bottom: 0px;
   left: 0;
-  height: calc(100vh - 50px);
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -34,7 +33,8 @@
 }
 
 .photo-album {
-  display: none;
+  // display: none;
+  display: grid;
   grid-gap: 4vw;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: start;
@@ -55,10 +55,11 @@
   }
 
   .photo-column {
+    position: relative;
     display: grid;
     grid-gap: 4vw;
     grid-template-columns: minmax(0, 1fr);
-    min-height: 1000px;
+    // min-height: 1000px;
 
     @media screen and (max-width: 767px) {
       grid-gap: 2vw;
@@ -89,3 +90,7 @@
     width: 30px;
   }
 }
+
+// .infinite-scroll-component {
+//   overflow: hidden !important;
+// }

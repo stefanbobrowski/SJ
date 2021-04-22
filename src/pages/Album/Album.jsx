@@ -1,20 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
+// import TrackVisibility from 'react-on-screen';
+import InfiniteScroll from 'react-infinite-scroll-component';
+
 import Photo from '../../components/Photo/Photo';
-
-import TrackVisibility from 'react-on-screen';
-
 import chevronUp from '../../assets/icons/chevron-up.svg';
 
 import './Album.scss';
 
 function Album(props) {
-  const [photoCols, setPhotoCols] = useState([]);
-  const [albumSize, setAlbumSize] = useState(0);
-  const [loadCount, setLoadCount] = useState(1);
+  const [photoCols, setPhotoCols] = useState([[], []]);
   const [showScroll, setShowScroll] = useState(false);
-  const [allLoaded, setAllLoaded] = useState(false);
+  // const [allLoaded, setAllLoaded] = useState(false);
+
+  const [apiURI, setApiUri] = useState('http://localhost:3003');
+  // const [apiURI, setApiUri] = useState('https://stefanbobrowski.com/api/exercise-logs');
+
+  const [tempPhotos, setTempPhotos] = useState([]);
+  const [dataSize, setDataSize] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [more, setMore] = useState(true);
+
+  const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
     window.addEventListener('scroll', checkScrollTop);
@@ -26,48 +34,37 @@ function Album(props) {
 
   useEffect(() => {
     // console.log('Album props: ', props.albumName);
-    setAllLoaded(false);
-    setPhotoCols([]);
-    setAlbumSize(0);
-    setLoadCount(1);
+    setPhotoCols([[], []]);
+    setCurrentPage(1);
+    fetchPhotos(currentPage);
+  }, [props.albumName]);
 
-    let images = [];
-
-    if (props.albumName === 'I') {
-      images = importAll(require.context('../../assets/albums/I', false, /\.(png|jpe?g|svg)$/));
-    } else if (props.albumName === 'II') {
-      images = importAll(require.context('../../assets/albums/II', false, /\.(png|jpe?g|svg)$/));
-    }
-
-    if (images.length) {
-      images.forEach((img) => {
-        let fake = new Image();
-
-        fake.onload = function () {
-          var height = fake.height;
-          var width = fake.width;
-          img.width = width;
-          img.height = height;
-        };
-
-        fake.src = img.default;
-      });
-
-      setAlbumSize(images.length);
-      const middle = Math.ceil(images.length / 2);
-      const left = images.slice(0, middle);
-      const right = images.slice(middle);
+  useEffect(() => {
+    if (tempPhotos.length) {
+      const middle = Math.ceil(tempPhotos.length / 2);
+      const left = tempPhotos.slice(0, middle);
+      const right = tempPhotos.slice(middle);
 
       // console.log(left);
       // console.log(right);
 
-      setPhotoCols([left, right]);
-    }
-  }, [props.albumName]);
+      let clone = photoCols;
 
-  function importAll(r) {
-    return r.keys().map(r);
-  }
+      if (!clone.length) {
+        clone.push(left);
+        clone.push(right);
+      } else {
+        let l = clone[0];
+        let r = clone[1];
+        l = [...l, ...left];
+        r = [...r, ...right];
+        setDataSize(dataSize + l.length + r.length);
+        clone = [l, r];
+      }
+
+      setPhotoCols(clone);
+    }
+  }, [tempPhotos]);
 
   const checkScrollTop = () => {
     if (!showScroll && window.pageYOffset > 400) {
@@ -83,46 +80,74 @@ function Album(props) {
     }, 1);
   };
 
-  const finishLoading = () => {
-    setAllLoaded(true);
+  // const finishLoading = () => {
+  //   setAllLoaded(true);
 
-    setTimeout(function () {
-      window.scrollTo({ top: 1, behavior: 'smooth' });
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 300);
-  };
+  //   setTimeout(function () {
+  //     window.scrollTo({ top: 1, behavior: 'smooth' });
+  //     window.scrollTo({ top: 0, behavior: 'smooth' });
+  //   }, 300);
+  // };
 
-  const handleLoad = () => {
-    setLoadCount(loadCount + 1);
-    console.log(`Loading photos: ${loadCount}/${albumSize}`);
-    if (loadCount >= albumSize) {
-      console.log('Finished loading');
-      finishLoading();
+  const fetchPhotos = async () => {
+    console.log('fetching photos', currentPage);
+
+    const nextPage = currentPage + 1;
+    setCurrentPage(nextPage);
+
+    try {
+      const response = await fetch(
+        `${apiURI}/photos?album=${props.albumName}&pageNum=${nextPage}`,
+        {
+          method: 'GET',
+        },
+      );
+      const res = await response.json();
+      console.log(res);
+
+      if (res.photos.length) {
+        setTempPhotos(res.photos);
+      } else {
+        setMore(false);
+      }
+    } catch (err) {
+      console.log(err);
+      setErrorMsg(err);
     }
   };
 
   return (
     <div className="page album">
-      {!allLoaded ? (
-        <div className="loading-spinner-container">
-          <div className="loading-spinner"></div>{' '}
+      {errorMsg ? <p>{errorMsg.message}</p> : <></>}
+      <InfiniteScroll
+        dataLength={dataSize} //This is important field to render the next data
+        next={fetchPhotos}
+        hasMore={more}
+        loader={
+          <div className="loading-spinner-container">
+            <div className="loading-spinner"></div>{' '}
+          </div>
+        }
+        scrollThreshold={0.95}
+        // scrollThreshold={'100px'}
+        endMessage={
+          <p style={{ textAlign: 'center' }}>
+            <b>Yay! You have seen it all</b>
+          </p>
+        }
+      >
+        <div className={`photo-album col-2`}>
+          {photoCols &&
+            photoCols.map((photoCol, i) => (
+              <div className="photo-column" key={i}>
+                {photoCol.map((photo, j) => (
+                  <Photo albumName={props.albumName} photo={photo} key={j} />
+                ))}
+              </div>
+            ))}
         </div>
-      ) : (
-        <></>
-      )}
+      </InfiniteScroll>
 
-      <div className={`photo-album col-2 ${allLoaded ? 'all-loaded' : ''}`}>
-        {photoCols &&
-          photoCols.map((photoCol, i) => (
-            <div className="photo-column" key={i}>
-              {photoCol.map((photo, j) => (
-                <TrackVisibility key={j} offset={50} partialVisibility once>
-                  <Photo photo={photo} handleLoad={handleLoad} />
-                </TrackVisibility>
-              ))}
-            </div>
-          ))}
-      </div>
       <button
         className="scroll-to-top-button"
         style={{ display: showScroll ? 'flex' : 'none' }}
