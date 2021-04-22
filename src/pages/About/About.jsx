@@ -4,7 +4,7 @@ import './About.scss';
 
 import logo from '../../assets/logo.png';
 
-function About(props) {
+function About() {
   return (
     <div className="page about">
       <div className="about-container">
@@ -19,14 +19,12 @@ function About(props) {
           and became a beauty school drop out when I was 20. I started bartending to supplement
           income but it led me down a dark path.
         </p>
-
         <p>
           It wasn’t until 2017 that I got out of bartending and truly began to heal. My work started
           to flourish. Instead of bartending, I started working with kids and was able to enjoy my
           craft with zero stress again. I was born to be a photographer and highlight people’s
           beauty and authenticity. I have over 17+ years of experience with:{' '}
         </p>
-
         <ul>
           <li>Swim</li>
           <li>Editorial</li>

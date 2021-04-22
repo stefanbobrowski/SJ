@@ -6,7 +6,7 @@ import youTube from '../../assets/icons/youtube.svg';
 
 import './Contact.scss';
 
-function Contact(props) {
+function Contact() {
   return (
     <div className="page contact">
       <div className="logo-container">

@@ -24,7 +24,7 @@ const Photo = (props) => {
     <div className={`photo ${loaded ? 'loaded' : ''}`}>
       <img
         src={process.env.PUBLIC_URL + `albums/${props.albumName}/` + props.photo}
-        loading="lazy"
+        // loading="lazy"
         alt="photo"
         onLoad={handleLoad}
       />

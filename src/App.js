@@ -10,6 +10,7 @@ import Header from './components/Header/Header.jsx';
 import './App.scss';
 
 window.onbeforeunload = function () {
+  // Set scroll to top on refresh
   window.scrollTo(0, 0);
 };
 
@@ -27,16 +28,12 @@ function App() {
         <Route exact path="/II">
           <Album albumName={'II'} />
         </Route>
-        {/* <Route exact path="/III">
-          <Album albumName={'III'} />
-        </Route> */}
         <Route exact path="/about">
           <About />
         </Route>
         <Route path="/contact">
           <Contact />
         </Route>
-
         <Route component={PageNotFound} />
       </Switch>
     </div>

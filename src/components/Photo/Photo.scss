@@ -2,12 +2,14 @@
   display: block;
   width: 100%;
   position: relative;
-  top: -50px;
+  top: 100px;
+  // top: 0px;
   opacity: 0;
   // height: 500px;
-  // transition: top opacity 1s ease;
+  // transition: opacity 2s ease;
 
   &.loaded {
+    // opacity: 1;
     // height: auto;
     // opacity: 1;
     // top: 0px;
@@ -19,13 +21,13 @@
 
   @keyframes slideup {
     from {
-      top: -50px;
       opacity: 0;
+      top: 100px;
     }
 
     to {
-      top: 0px;
       opacity: 1;
+      top: 0px;
     }
   }
 }

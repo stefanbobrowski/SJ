@@ -1,3 +1,27 @@
+@import '../../styles/variables';
+
 .page-not-found {
   padding: 3vw;
+
+  h2 {
+    font-size: 4rem;
+    line-height: 4rem;
+    margin-bottom: 0;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: $theme-color;
+
+    &:hover {
+      color: darken($theme-color, 10%);
+    }
+  }
 }

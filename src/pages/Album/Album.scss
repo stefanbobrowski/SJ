@@ -39,6 +39,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: start;
   min-height: 1000px;
+  margin-bottom: 2rem;
 
   @media screen and (max-width: 767px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -91,6 +92,7 @@
   }
 }
 
-// .infinite-scroll-component {
-//   overflow: hidden !important;
-// }
+.infinite-scroll-component {
+  // overflow: hidden !important;
+  padding-bottom: 300px;
+}
