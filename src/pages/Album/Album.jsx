@@ -1,29 +1,58 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-// import TrackVisibility from 'react-on-screen';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import Photo from '../../components/Photo/Photo';
+
 import chevronUp from '../../assets/icons/chevron-up.svg';
 import logo from '../../assets/logo.png';
 
 import './Album.scss';
 
+smoothscroll.polyfill();
+
 function Album(props) {
-  const [photoCols, setPhotoCols] = useState([[], []]);
-  const [showScroll, setShowScroll] = useState(false);
-  // const [allLoaded, setAllLoaded] = useState(false);
+  // State
+  const [apiUrl, setApiUrl] = useState('http://localhost:3003');
+  // const [apiUrl, setApiUrl] = useState('https://susiejetta.com/api');
 
-  const [apiURI, setApiUri] = useState('http://localhost:3003');
-  // const [apiURI, setApiUri] = useState('https://stefanbobrowski.com/api/exercise-logs');
-
-  const [tempPhotos, setTempPhotos] = useState([]);
   const [dataSize, setDataSize] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
   const [more, setMore] = useState(true);
-
+  const [tempPhotos, setTempPhotos] = useState([]);
+  const [photoCols, setPhotoCols] = useState([[], []]);
   const [errorMsg, setErrorMsg] = useState('');
+  const [showScroll, setShowScroll] = useState(false);
+
+  // Functions
+
+  const fetchPhotos = async (page, pageSize) => {
+    console.log('fetching photos', page, apiUrl);
+
+    setCurrentPage(page);
+
+    try {
+      const response = await fetch(
+        `${apiUrl}/photos?album=${props.albumName}&pageNum=${page}&pageSize=${pageSize}`,
+        {
+          method: 'GET',
+        },
+      );
+      const res = await response.json();
+      console.log('log the res', res);
+
+      if (res.photos.length) {
+        setTempPhotos(res.photos);
+      } else {
+        setMore(false);
+      }
+    } catch (err) {
+      console.log(err);
+      setErrorMsg(err);
+    }
+  };
 
   const checkScrollTop = () => {
     if (!showScroll && window.pageYOffset > 400) {
@@ -39,38 +68,7 @@ function Album(props) {
     }, 1);
   };
 
-  // const finishLoading = () => {
-  //   setAllLoaded(true);
-
-  //   setTimeout(function () {
-  //     window.scrollTo({ top: 1, behavior: 'smooth' });
-  //     window.scrollTo({ top: 0, behavior: 'smooth' });
-  //   }, 300);
-  // };
-
-  const fetchPhotos = async (page) => {
-    // console.log('fetching photos', page);
-
-    setCurrentPage(page);
-
-    try {
-      const response = await fetch(`${apiURI}/photos?album=${props.albumName}&pageNum=${page}`, {
-        method: 'GET',
-      });
-      const res = await response.json();
-      // console.log(res);
-
-      if (res.photos.length) {
-        setTempPhotos(res.photos);
-      } else {
-        setMore(false);
-      }
-    } catch (err) {
-      console.log(err);
-      setErrorMsg(err);
-    }
-  };
-
+  // Effects
   useEffect(() => {
     window.addEventListener('scroll', checkScrollTop);
 
@@ -80,11 +78,10 @@ function Album(props) {
   }, []);
 
   useEffect(() => {
-    // console.log('Album props: ', props.albumName);
     setPhotoCols([[], []]);
-    setDataSize(0);
     setMore(true);
-    fetchPhotos(1);
+    setDataSize(0);
+    fetchPhotos(0, 4);
   }, [props.albumName]);
 
   useEffect(() => {
@@ -92,9 +89,6 @@ function Album(props) {
       const middle = Math.floor(tempPhotos.length / 2);
       const left = tempPhotos.slice(0, middle);
       const right = tempPhotos.slice(middle);
-
-      // console.log(left);
-      // console.log(right);
 
       let clone = photoCols;
 
@@ -118,16 +112,10 @@ function Album(props) {
     <div className="page album">
       {errorMsg ? <p>{errorMsg.message}</p> : <></>}
       <InfiniteScroll
-        dataLength={dataSize} //This is important field to render the next data
-        next={() => fetchPhotos(currentPage + 1)}
+        dataLength={dataSize}
+        next={() => fetchPhotos(currentPage + 1, 2)}
         hasMore={more}
-        // loader={
-        //   <div className="loading-spinner-container">
-        //     <div className="loading-spinner"></div>{' '}
-        //   </div>
-        // }
-        scrollThreshold={0.9}
-        // scrollThreshold={'100px'}
+        scrollThreshold={0.8}
         endMessage={
           <div className="logo-container">
             <img src={logo} alt="Susie Jetta" />

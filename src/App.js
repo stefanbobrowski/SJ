@@ -7,7 +7,7 @@ import Contact from './pages/Contact/Contact.jsx';
 import PageNotFound from './pages/PageNotFound/PageNotFound.jsx';
 import Header from './components/Header/Header.jsx';
 
-import './App.scss';
+import './styles/App.scss';
 
 window.onbeforeunload = function () {
   // Set scroll to top on refresh
