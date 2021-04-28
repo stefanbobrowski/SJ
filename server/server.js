@@ -12,7 +12,6 @@ app.get('/photos', (req, res) => {
   if (!Object.keys(req.query).length === 0) {
     console.log('Expected album: ', album);
   } else {
-    console.log('Okay..: ', album);
     fs.readdir(`../public/albums/${album}`, (err, files) => {
       // fs.readdir(`./albums/${album}`, (err, photos) => {
       if (err) {
