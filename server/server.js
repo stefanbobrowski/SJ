@@ -7,13 +7,13 @@ const port = 3003;
 app.use(cors());
 
 app.get('/photos', (req, res) => {
-  const album = req.query.album;
-
   if (!Object.keys(req.query).length === 0) {
-    console.log('Expected album: ', album);
+    console.log('Expected album: ', req.query.album);
   } else {
+    const album = req.query.album;
+
     fs.readdir(`../public/albums/${album}`, (err, files) => {
-      // fs.readdir(`./albums/${album}`, (err, photos) => {
+      // fs.readdir(`./albums/${album}`, (err, files) => {
       if (err) {
         console.log('READ photos ERROR: ', err);
       }

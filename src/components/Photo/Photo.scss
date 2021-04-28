@@ -4,14 +4,11 @@
   position: relative;
   top: 100px;
   opacity: 0;
-  // height: 500px;
-  // transition: opacity 2s ease;
   transition: 1s ease;
   transform: translateZ(1);
 
   &.loaded {
     // // opacity: 1;
-    // // height: auto;
   }
 
   &.visible {
