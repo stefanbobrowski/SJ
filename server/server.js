@@ -1,24 +1,27 @@
 const express = require('express');
+const cors = require('cors');
 const fs = require('fs');
 const app = express();
 const port = 3003;
 
+app.use(cors());
+
 app.get('/photos', (req, res) => {
-  // console.log('Req: ', req.query);
-
   const album = req.query.album;
-  const pageNum = parseInt(req.query.pageNum);
-  const pageSize = parseInt(req.query.pageSize);
 
-  // fs.readdir(`../albums/${album}`, (err, files) => {
-  fs.readdir(`../public/albums/${album}`, (err, files) => {
-    if (pageNum !== 0) {
-      files = files.splice(2);
-    }
-    const photoSet = files.slice(pageNum * pageSize, pageNum * pageSize + pageSize);
-    // console.log('Photo set: ', photoSet);
-    res.send({ photos: photoSet });
-  });
+  if (!Object.keys(req.query).length === 0) {
+    console.log('Expected album: ', album);
+  } else {
+    console.log('Okay..: ', album);
+    fs.readdir(`../public/albums/${album}`, (err, files) => {
+      // fs.readdir(`./albums/${album}`, (err, photos) => {
+      if (err) {
+        console.log('READ photos ERROR: ', err);
+      }
+
+      res.send({ photos: files });
+    });
+  }
 });
 
 app.listen(port, () => {

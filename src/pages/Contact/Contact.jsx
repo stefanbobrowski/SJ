@@ -12,24 +12,28 @@ function Contact() {
       <div className="logo-container">
         <img src={logo} alt="Susie Jetta" />
       </div>
-      <div className="email-insta">
-        <a href="mailto:susiejetta@gmail.com">susiejetta@gmail.com</a>
-        <a
-          className="instagram"
-          href="https://www.instagram.com/susiejetta/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={instagram} alt="Instagram" />
+      <div className="email-social">
+        <a className="email" href="mailto:susiejetta@gmail.com">
+          susiejetta@gmail.com
         </a>
-        <a
-          className="youtube"
-          href="https://www.youtube.com/channel/UCiV7zs_StQ6yv03WnLKy0vg"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={youTube} alt="YouTube" />
-        </a>
+        <div className="social">
+          <a
+            className="instagram"
+            href="https://www.instagram.com/susiejetta/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={instagram} alt="Instagram" />
+          </a>
+          <a
+            className="youtube"
+            href="https://www.youtube.com/channel/UCiV7zs_StQ6yv03WnLKy0vg"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={youTube} alt="YouTube" />
+          </a>
+        </div>
       </div>
     </div>
   );

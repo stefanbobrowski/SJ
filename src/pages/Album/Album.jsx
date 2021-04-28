@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import InfiniteScroll from 'react-infinite-scroll-component';
 import smoothscroll from 'smoothscroll-polyfill';
+import TrackVisibility from 'react-on-screen';
 
 import Photo from '../../components/Photo/Photo';
 
@@ -21,37 +22,64 @@ function Album(props) {
   const [dataSize, setDataSize] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [more, setMore] = useState(true);
-  const [tempPhotos, setTempPhotos] = useState([]);
   const [photoCols, setPhotoCols] = useState([[], []]);
   const [errorMsg, setErrorMsg] = useState('');
   const [showScroll, setShowScroll] = useState(false);
+  const [photoAlbum, setPhotoAlbum] = useState([]);
+  const [shuffled, setShuffled] = useState([]);
+  const [lastIndex, setLastIndex] = useState(0);
 
   // Functions
+  function shufflePhotos(deck) {
+    for (let i = deck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
+    return deck;
+  }
 
-  const fetchPhotos = async (page, pageSize) => {
-    console.log('fetching photos', page, apiUrl);
-
-    setCurrentPage(page);
-
+  const fetchAlbum = async () => {
     try {
-      const response = await fetch(
-        `${apiUrl}/photos?album=${props.albumName}&pageNum=${page}&pageSize=${pageSize}`,
-        {
-          method: 'GET',
-        },
-      );
+      const response = await fetch(`${apiUrl}/photos?album=${props.albumName}`, {
+        method: 'GET',
+      });
       const res = await response.json();
-      console.log('log the res', res);
-
-      if (res.photos.length) {
-        setTempPhotos(res.photos);
-      } else {
-        setMore(false);
-      }
+      setPhotoAlbum(res.photos);
     } catch (err) {
-      console.log(err);
+      console.log('FETCH PHOTOS ERROR:', err);
       setErrorMsg(err);
     }
+  };
+
+  const fetchPhotos = (page, pageSize) => {
+    const nextPhotos = shuffled.slice(lastIndex, lastIndex + pageSize);
+
+    if (nextPhotos) {
+      const middle = Math.floor(nextPhotos.length / 2);
+      const left = nextPhotos.slice(0, middle);
+      const right = nextPhotos.slice(middle);
+
+      let clone = photoCols;
+
+      if (!clone.length) {
+        clone.push(left);
+        clone.push(right);
+      } else {
+        let l = clone[0];
+        let r = clone[1];
+        l = [...l, ...left];
+        r = [...r, ...right];
+        setDataSize(dataSize + l.length + r.length);
+        clone = [l, r];
+      }
+
+      setPhotoCols(clone);
+    } else {
+      setMore(false);
+    }
+
+    setCurrentPage(page);
+    setLastIndex(lastIndex + pageSize);
   };
 
   const checkScrollTop = () => {
@@ -81,32 +109,22 @@ function Album(props) {
     setPhotoCols([[], []]);
     setMore(true);
     setDataSize(0);
-    fetchPhotos(0, 4);
+    setShuffled([]);
+    fetchAlbum();
   }, [props.albumName]);
 
   useEffect(() => {
-    if (tempPhotos.length) {
-      const middle = Math.floor(tempPhotos.length / 2);
-      const left = tempPhotos.slice(0, middle);
-      const right = tempPhotos.slice(middle);
-
-      let clone = photoCols;
-
-      if (!clone.length) {
-        clone.push(left);
-        clone.push(right);
-      } else {
-        let l = clone[0];
-        let r = clone[1];
-        l = [...l, ...left];
-        r = [...r, ...right];
-        setDataSize(dataSize + l.length + r.length);
-        clone = [l, r];
-      }
-
-      setPhotoCols(clone);
+    if (photoAlbum.length && !shuffled.length) {
+      setShuffled(shufflePhotos(photoAlbum));
     }
-  }, [tempPhotos]);
+  }, [photoAlbum]);
+
+  useEffect(() => {
+    if (shuffled.length) {
+      // initial fetch of 6
+      fetchPhotos(1, 6);
+    }
+  }, [shuffled]);
 
   return (
     <div className="page album">
@@ -115,7 +133,7 @@ function Album(props) {
         dataLength={dataSize}
         next={() => fetchPhotos(currentPage + 1, 2)}
         hasMore={more}
-        scrollThreshold={0.8}
+        scrollThreshold={0.9}
         endMessage={
           <div className="logo-container">
             <img src={logo} alt="Susie Jetta" />
@@ -127,7 +145,9 @@ function Album(props) {
             photoCols.map((photoCol, i) => (
               <div className="photo-column" key={i}>
                 {photoCol.map((photo, j) => (
-                  <Photo albumName={props.albumName} photo={photo} key={j} />
+                  <TrackVisibility partialVisibility once key={j}>
+                    <Photo albumName={props.albumName} photo={photo} />
+                  </TrackVisibility>
                 ))}
               </div>
             ))}
