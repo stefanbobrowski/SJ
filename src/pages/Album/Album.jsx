@@ -106,10 +106,12 @@ function Album(props) {
   }, []);
 
   useEffect(() => {
+    setPhotoAlbum([]);
     setPhotoCols([[], []]);
     setMore(true);
     setDataSize(0);
     setShuffled([]);
+    setLastIndex(0);
     fetchAlbum();
   }, [props.albumName]);
 
