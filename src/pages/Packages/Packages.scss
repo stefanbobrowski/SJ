@@ -1,0 +1,83 @@
+@import '../../styles/variables';
+
+.packages {
+    font-size: 1rem;
+
+    .packages-container {
+        max-width: 770px;
+        margin: 0 auto;
+        padding: 1rem 0;
+    }
+
+    ol, ul {
+        list-style-position: inside;
+        li {
+            line-height: 1.7rem;
+        }
+    }
+
+    .package-list {
+        margin: 0;
+        padding-left: 0;
+        list-style-type: none;
+    }
+    
+    .pink {
+        color: $theme-color;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        line-height: 1.8rem;
+    }
+
+
+    
+    h2 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        font-weight: normal;
+        text-align: center;
+    }
+    
+    h3 {
+        margin-top: 1.5rem;
+        margin-bottom: 0.3rem;
+        font-size: 1.1rem;
+        font-weight: normal;
+        color: $theme-color;
+    }
+
+    .flower-break {
+        width: 70px;
+        margin: 2rem auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .centered {
+        margin: 2rem auto 1rem auto;
+        max-width: 690px;
+        text-align: center;
+
+        &.questionnaire {
+            margin-bottom: 3rem;
+
+            li {
+                margin-bottom: 0.5rem;
+                line-height: 1.75rem;
+            }
+        }
+
+
+    }
+
+    .final-thoughts {
+        margin-bottom: 2rem;
+        li {
+            margin-bottom: 1rem;
+            line-height: 1.9rem;
+        }
+    }
+}

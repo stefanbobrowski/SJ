@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .page.about {
   flex: 1 0 auto;
   display: flex;
@@ -8,7 +10,18 @@
 .about-container {
   max-width: 700px;
 
+  h2 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: $theme-color;
+  }
+
   p {
+    line-height: 2rem;
     margin-bottom: 1rem;
   }
 }

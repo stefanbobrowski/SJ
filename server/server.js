@@ -13,7 +13,7 @@ app.get('/photos', (req, res) => {
     const album = req.query.album;
 
     fs.readdir(`../public/albums/${album}`, (err, files) => {
-      // fs.readdir(`./albums/${album}`, (err, files) => {
+      // fs.readdir(`../albums/${album}`, (err, files) => {
       if (err) {
         console.log('READ photos ERROR: ', err);
       }

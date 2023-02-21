@@ -1,12 +1,12 @@
 {
   "name": "susie-jetta",
   "version": "1.0.0",
-  "description": "Susie Jetta portfolio website",
+  "description": "Susie Jetta Make Up and Photography",
   "author": "Stefan Bobrowski",
   "homepage": "https://susiejetta.com",
   "license": "MIT",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
     "react": "^17.0.2",

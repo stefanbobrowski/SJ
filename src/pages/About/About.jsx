@@ -5,43 +5,31 @@ import './About.scss';
 import logo from '../../assets/logo.png';
 
 function About() {
-  return (
-    <div className="page about">
-      <div className="about-container">
-        <div className="logo-container">
-          <img src={logo} alt="Susie Jetta" />
-        </div>
-        <p>
-          I have been a photographer and director since I was 9 years old and I got my first paid
-          photography gigs at 13. I then started to do make up at 16 and started charging girls in
-          my school for beauty photoshoots. I moved to Florida after high school, attended beauty
-          school, met a lot of people in the beauty industry as a make up artist and photographer,
-          and became a beauty school drop out when I was 20. I started bartending to supplement
-          income but it led me down a dark path.
-        </p>
-        <p>
-          It wasn’t until 2017 that I got out of bartending and truly began to heal. My work started
-          to flourish. Instead of bartending, I started working with kids and was able to enjoy my
-          craft with zero stress again. I was born to be a photographer and highlight people’s
-          beauty and authenticity. I have over 17+ years of experience with:{' '}
-        </p>
-        <ul>
-          <li>Swim</li>
-          <li>Editorial</li>
-          <li>Beauty</li>
-          <li>Fitness</li>
-          <li>Lifestyle</li>
-          <li>Music</li>
-          <li>Photography</li>
-          <li>Photojournalism</li>
-          <li>Make up</li>
-          <li>Styling</li>
-          <li>Creative Direction</li>
-        </ul>
-        <p>- Susie Jetta</p>
-      </div>
-    </div>
-  );
+	return (
+		<div className="page about">
+			<div className="about-container">
+				<h2>Susie Jetta Make Up and Photography</h2>
+				<p>
+					<i>
+						&#8195;&#8195;Susie Jetta is a Connecticut born, Delray Beach, Florida based lifestyle,
+						portrait, fitness, event, and wedding photographer who aims to capture human&apos;s most
+						beautiful and authentic selves.
+					</i>
+				</p>
+				<p>
+					&#8195;&#8195;I am here to make you feel comfortable, show you how to pose in a way that
+					is most flattering and effortless to you, and possibly make you ugly laugh. Most of my
+					clients have never (willingly) stepped in front of a camera, and don&apos;t realize how
+					photogenic they can be. I take extreme pride in being the first person to capture the pure
+					potential most people don&apos;t realize they have. Give me the posed and form-perfect,
+					give me the raw and relatable, and anything and all in between.
+				</p>
+				<div className="logo-container">
+					<img src={logo} alt="Susie Jetta" />
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default About;

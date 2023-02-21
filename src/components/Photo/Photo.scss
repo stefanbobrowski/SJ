@@ -4,7 +4,7 @@
   position: relative;
   top: 100px;
   opacity: 0;
-  transition: 1s ease;
+  transition: 0.75s ease;
   transform: translateZ(1);
 
   &.loaded {
@@ -15,7 +15,7 @@
     // animation-delay: 0.5s;
     animation-duration: 0.75s;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
+    animation-timing-function: ease;
     animation-name: slideup;
   }
 
