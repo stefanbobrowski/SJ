@@ -110,8 +110,8 @@ function About() {
 				<div className="centered">
 					<ul>
 						<li>
-							I shoot mostly on location but my Current Studio is located in WPB off Okeechobee and
-							Dixie.
+							Primary studio is the Denn Boca located at: 4160 NE 1st Ave, Boca Raton, FL 33431,
+							Unit 16. @thedennboca
 						</li>
 						<li>
 							Buy 2 or more packages at once to receive a significant discount OR work with me on a

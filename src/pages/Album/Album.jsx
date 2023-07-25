@@ -16,8 +16,8 @@ smoothscroll.polyfill();
 
 function Album(props) {
 	// State
-	const apiUrl = 'http://localhost:3003';
-	// const apiUrl = 'https://susiejetta.com/api';
+	// const apiUrl = 'http://localhost:3003';
+	const apiUrl = 'https://susiejetta.com/api';
 
 	const [dataSize, setDataSize] = useState(0);
 	const [currentPage, setCurrentPage] = useState(0);
@@ -124,7 +124,7 @@ function Album(props) {
 	}, [props.albumName]);
 
 	useEffect(() => {
-		if (photoAlbum.length && !shuffled.length) {
+		if (photoAlbum && !shuffled.length) {
 			setShuffled(shufflePhotos(photoAlbum));
 		}
 	}, [photoAlbum]);

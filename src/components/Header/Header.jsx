@@ -95,6 +95,9 @@ function Header() {
 				<NavLink exact className="nav-link" activeClassName="is-active" to="/II">
 					II
 				</NavLink>
+				<NavLink exact className="nav-link" activeClassName="is-active" to="/packages">
+					packages
+				</NavLink>
 				<NavLink exact className="nav-link" activeClassName="is-active" to="/about">
 					about
 				</NavLink>
