@@ -2,186 +2,187 @@
 @import '../../styles/variables';
 
 header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0vw 3vw 0vw 3vw;
-  height: 50px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 0vw 3vw 0vw 3vw;
+	height: 50px;
 
-  @media screen and (max-width: 767px) {
-    height: 80px;
-  }
+	@media screen and (max-width: 767px) {
+		height: 80px;
+	}
 
-  .home-link {
-    font-family: 'Train One', cursive;
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-right: auto;
-    margin-left: 0px;
-    text-decoration: none;
-    white-space: nowrap;
-    color: #000;
+	.home-link {
+		font-family: 'Train One', cursive;
+		font-size: 1.5rem;
+		font-weight: 500;
+		margin-right: auto;
+		margin-left: 0px;
+		text-decoration: none;
+		white-space: nowrap;
+		color: #000;
 
-    &:hover {
-      color: $theme-color;
-    }
-  }
+		&:hover {
+			color: $theme-color;
+		}
+	}
 
-  .desktop-nav,
-  .mobile-nav {
-    .nav-link {
-      position: relative;
+	.desktop-nav,
+	.mobile-nav {
+		.nav-link {
+			position: relative;
 
-      color: #000;
-      &.is-active {
-        color: darken($theme-color, 7%);
-        &:after {
-          opacity: 1;
-          width: 100%;
-        }
-      }
+			color: #000;
+			&.is-active {
+				color: darken($theme-color, 7%);
+				&:after {
+					opacity: 1;
+					width: 100%;
+				}
+			}
 
-      &:hover {
-        color: darken($theme-color, 7%);
+			&:hover {
+				color: darken($theme-color, 7%);
 
-        &:after {
-          opacity: 1;
-          width: 100%;
-        }
-      }
+				&:after {
+					opacity: 1;
+					width: 100%;
+				}
+			}
 
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: -0.25rem;
-        left: 0;
-        right: 0;
-        display: block;
-        width: 0%;
-        height: 1px;
-        margin: auto;
-        background-color: #000;
-        opacity: 0;
-        transform-origin: center center;
-        transition: 0.3s ease;
-      }
-    }
-  }
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: -0.25rem;
+				left: 0;
+				right: 0;
+				display: block;
+				width: 0%;
+				height: 1px;
+				margin: auto;
+				background-color: #000;
+				opacity: 0;
+				transform-origin: center center;
+				transition: 0.3s ease;
+			}
+		}
+	}
 
-  .desktop-nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+	.desktop-nav {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
 
-    a {
-      margin-left: 1.5rem;
-    }
+		a {
+			margin-left: 1.5rem;
+		}
 
-    .nav-link {
-      font-size: 1.2rem;
-      font-weight: 400;
-      text-decoration: none;
-      line-height: 1;
-      white-space: nowrap;
-      color: $theme-color;
-    }
+		.nav-link {
+			font-size: 1.2rem;
+			font-weight: 400;
+			text-decoration: none;
+			line-height: 1;
+			white-space: nowrap;
+			color: $theme-color;
+		}
 
-    .instagram,
-    .youtube {
-      width: 25px;
-    }
-  }
+		.instagram,
+		.youtube {
+			width: 25px;
+		}
+	}
 
-  .mobile-nav-button {
-    display: none;
-    background-color: none;
-    border: 0;
-    outline: 0;
-    background: none;
+	.mobile-nav-button {
+		display: none;
+		background-color: none;
+		border: 0;
+		outline: 0;
+		background: none;
 
-    &:hover {
-      cursor: pointer;
-    }
+		&:hover {
+			cursor: pointer;
+		}
 
-    &.close {
-      .line-1 {
-        transform: rotate(45deg) translate(0px, 6.5px);
-      }
+		&.close {
+			.line-1 {
+				transform: rotate(45deg) translate(0px, 6.5px);
+			}
 
-      .line-2 {
-        transform: rotate(-45deg) translate(0px, -6.55px);
-      }
-    }
+			.line-2 {
+				transform: rotate(-45deg) translate(0px, -6.55px);
+			}
+		}
 
-    .line-1,
-    .line-2 {
-      display: block;
-      width: 30px;
-      height: 2px;
-      background-color: black;
-      transition: 0.2s ease;
-    }
+		.line-1,
+		.line-2 {
+			display: block;
+			width: 30px;
+			height: 2px;
+			background-color: black;
+			transition: 0.2s ease;
+		}
 
-    .line-1 {
-      margin-bottom: 7px;
-    }
+		.line-1 {
+			margin-bottom: 7px;
+		}
 
-    @media screen and (max-width: 767px) {
-      display: block;
-    }
-  }
+		@media screen and (max-width: 767px) {
+			display: block;
+		}
+	}
 
-  nav.desktop-nav {
-    @media screen and (max-width: 767px) {
-      a {
-        display: none;
-      }
+	nav.desktop-nav {
+		@media screen and (max-width: 767px) {
+			a {
+				display: none;
+			}
 
-      .mobile-nav-button {
-        display: block;
-      }
-    }
-  }
+			.mobile-nav-button {
+				display: block;
+			}
+		}
+	}
 
-  nav.mobile-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 50px);
-    padding: 30vw 3vw;
-    background-color: #fff;
-    z-index: 10;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.3s ease;
+	nav.mobile-nav {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: calc(100vh - 50px);
+		padding: 30vw 3vw;
+		background-color: #fff;
+		z-index: 10;
+		visibility: hidden;
+		opacity: 0;
+		transition: 0.3s ease;
 
-    @media screen and (max-width: 767px) {
-      height: calc(100vh - 80px);
-    }
+		@media screen and (max-width: 767px) {
+			height: calc(100vh - 80px);
+		}
 
-    &.show {
-      opacity: 1;
-      visibility: visible;
-    }
+		&.show {
+			opacity: 1;
+			visibility: visible;
+		}
 
-    .nav-link {
-      margin-bottom: 0.5rem;
-      font-size: 3rem;
-      text-decoration: none;
+		.nav-link {
+			margin-bottom: 0.5rem;
+			font-size: 3rem;
+			text-decoration: none;
 
-      &:after {
-        bottom: 0.75rem;
-        height: 2px;
-      }
-    }
+			&:after {
+				bottom: 0.75rem;
+				height: 2px;
+			}
+		}
 
-    .mobile-instagram {
-      margin: 1.5rem 0 3rem 0;
-    }
-  }
+		.mobile-instagram {
+			margin: 1.5rem 0 3rem 0;
+		}
+	}
 }

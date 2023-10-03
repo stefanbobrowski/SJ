@@ -16,8 +16,8 @@ smoothscroll.polyfill();
 
 function Album(props) {
 	// State
-	// const apiUrl = 'http://localhost:3003';
-	const apiUrl = 'https://susiejetta.com/api';
+	const apiUrl = 'http://localhost:3003';
+	// const apiUrl = 'https://susiejetta.com/api';
 
 	const [dataSize, setDataSize] = useState(0);
 	const [currentPage, setCurrentPage] = useState(0);
@@ -139,6 +139,15 @@ function Album(props) {
 	return (
 		<div className="page album">
 			{errorMsg ? <p>{errorMsg.message}</p> : <></>}
+			{props.albumName === 'III' ? (
+				<div className="denn-boca">
+					<h2>The Denn Boca Photo Studio</h2>
+					<p>4160 NW 1st Ave, Boca Raton, FL, 33431, Unit 16</p>
+					<a href="https://thedennboca.booksy.com" target="_blank" rel="noreferrer">
+						Click here to book
+					</a>
+				</div>
+			) : null}
 			<InfiniteScroll
 				dataLength={dataSize}
 				next={() => fetchPhotos(currentPage + 1, 2)}

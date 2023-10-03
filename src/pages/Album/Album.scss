@@ -1,68 +1,72 @@
 @import '../../styles/variables';
 
 .page.album {
-  .logo-container {
-    display: block;
-    margin-top: 15vh;
-  }
+	.logo-container {
+		display: block;
+		margin-top: 15vh;
+	}
 }
 
 .photo-album {
-  display: grid;
-  grid-gap: 3vw;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: start;
+	display: grid;
+	grid-gap: 3vw;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	align-items: start;
 
-  @media screen and (max-width: 767px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-gap: 2vw;
-  }
+	@media screen and (max-width: 767px) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-gap: 2vw;
+	}
 
-  &.col-2 {
-    padding: 0 1vw;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+	&.col-2 {
+		padding: 0 1vw;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 
-  &.all-loaded {
-    display: grid;
-  }
+	&.all-loaded {
+		display: grid;
+	}
 
-  .photo-column {
-    position: relative;
-    display: grid;
-    grid-gap: 3vw;
-    grid-template-columns: minmax(0, 1fr);
+	.photo-column {
+		position: relative;
+		display: grid;
+		grid-gap: 3vw;
+		grid-template-columns: minmax(0, 1fr);
 
-    @media screen and (max-width: 767px) {
-      grid-gap: 2vw;
-    }
-  }
+		@media screen and (max-width: 767px) {
+			grid-gap: 2vw;
+		}
+	}
 }
 
 .scroll-to-top-button {
-  position: fixed;
-  bottom: 3rem;
-  right: 3rem;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border: 0;
-  outline: 0;
-  border-radius: 50%;
-  background-color: $theme-color;
-  z-index: 10;
+	position: fixed;
+	bottom: 3rem;
+	right: 3rem;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	border: 0;
+	outline: 0;
+	border-radius: 50%;
+	background-color: $theme-color;
+	z-index: 10;
 
-  &:hover {
-    cursor: pointer;
-    background-color: darken($theme-color, 5%);
-  }
+	&:hover {
+		cursor: pointer;
+		background-color: darken($theme-color, 5%);
+	}
 
-  img {
-    width: 100%;
-  }
+	img {
+		width: 100%;
+	}
 }
 
 .infinite-scroll-component {
-  padding-bottom: 15vh;
+	padding-bottom: 15vh;
+}
+
+.denn-boca {
+	margin-bottom: 1.5rem;
 }

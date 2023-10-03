@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './About.scss';
-
+import dennBoca from '../../assets/dennboca.png';
 import logo from '../../assets/logo.png';
 
 function About() {
@@ -32,6 +32,9 @@ function About() {
 					comfortable, show them how to pose in a way that is most flattering and effortless to
 					their bodies, and most importantly share laughs and create memories along the way.
 				</p>
+				<div className="denn-boca-logo">
+					<img src={dennBoca} alt="The Denn Boca" />
+				</div>
 				<p>
 					After 15+ years of getting paid for photography, I am unbelievably grateful to now have a
 					home base: The Denn Boca. Established in June 2023, the studio has been a pipe dream of

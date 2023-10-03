@@ -14,7 +14,7 @@ function About() {
 				</h2>
 
 				<p>
-					<span className="pink"> ✿</span>
+					<span className="pink">✿ </span>
 					For ALL packages you receive ALL usable images sent back via a non-expiring Dropbox
 					folder, ready for download and share, plus 10 edits of choice. (Editing includes light
 					retouching, fixing blemishes, distractions, hair, slight tweaking of body, etc.) Receive

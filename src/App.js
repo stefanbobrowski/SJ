@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Album from './pages/Album/Album.jsx';
 import About from './pages/About/About.jsx';
+import Book from './pages/Book/Book.jsx';
 import Packages from './pages/Packages/Packages.jsx';
 import Contact from './pages/Contact/Contact.jsx';
 import PageNotFound from './pages/PageNotFound/PageNotFound.jsx';
@@ -28,6 +29,12 @@ function App() {
 				</Route>
 				<Route exact path="/II">
 					<Album albumName={'II'} />
+				</Route>
+				<Route exact path="/III">
+					<Album albumName={'III'} />
+				</Route>
+				<Route exact path="/book">
+					<Book />
 				</Route>
 				<Route exact path="/packages">
 					<Packages />

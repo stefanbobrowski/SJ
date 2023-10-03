@@ -1,32 +1,37 @@
 @import '../../styles/variables';
 
 .page.about {
-  flex: 1 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	flex: 1 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.denn-boca-logo {
+		img {
+			margin: 1.5rem auto;
+		}
+	}
 }
 
 .about-container {
-  max-width: 700px;
+	max-width: 700px;
 
-  h2 {
-    text-align: center;
-    font-size: 1rem;
-    font-weight: normal;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    color: $theme-color;
-  }
+	h2 {
+		text-align: center;
+		font-weight: normal;
+		margin-top: 1rem;
+		margin-bottom: 2rem;
+		text-transform: uppercase;
+		color: $theme-color;
+	}
 
-  p {
-    line-height: 2rem;
-    margin-bottom: 1rem;
-  }
+	p {
+		line-height: 2rem;
+		margin-bottom: 1rem;
+	}
 }
 
 .logo-container {
-  width: 200px;
-  margin: 0 auto;
+	width: 200px;
+	margin: 0 auto;
 }

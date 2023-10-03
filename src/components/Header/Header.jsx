@@ -54,6 +54,12 @@ function Header() {
 				<NavLink exact className="nav-link" activeClassName="is-active" to="/II">
 					II
 				</NavLink>
+				<NavLink exact className="nav-link" activeClassName="is-active" to="/III">
+					denn boca
+				</NavLink>
+				<NavLink exact className="nav-link" activeClassName="is-active" to="/book">
+					book now
+				</NavLink>
 				<NavLink exact className="nav-link" activeClassName="is-active" to="/packages">
 					packages
 				</NavLink>
@@ -94,6 +100,12 @@ function Header() {
 				</NavLink>
 				<NavLink exact className="nav-link" activeClassName="is-active" to="/II">
 					II
+				</NavLink>
+				<NavLink exact className="nav-link" activeClassName="is-active" to="/III">
+					denn boca
+				</NavLink>
+				<NavLink exact className="nav-link" activeClassName="is-active" to="/book">
+					book now
 				</NavLink>
 				<NavLink exact className="nav-link" activeClassName="is-active" to="/packages">
 					packages
