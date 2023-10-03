@@ -9,20 +9,19 @@ function About() {
 		<div className="page packages">
 			<div className="packages-container">
 				<h2>
-					<span className="pink">✿ </span>
 					Packages
 					<span className="pink"> ✿</span>
 				</h2>
-				<h3>All Packages</h3>
-				<ul className="package-list">
-					<li>
-						<span className="pink">✿ </span>All images on a non-expiring Dropbox folder, ready for
-						download and share
-					</li>
-					<li>
-						<span className="pink">✿ </span>Printing rights
-					</li>
-				</ul>
+
+				<p>
+					<span className="pink"> ✿</span>
+					For ALL packages you receive ALL usable images sent back via a non-expiring Dropbox
+					folder, ready for download and share, plus 10 edits of choice. (Editing includes light
+					retouching, fixing blemishes, distractions, hair, slight tweaking of body, etc.) Receive
+					significant discounts when you buy 2 or more packages or work with me on a regular basis!
+					<span className="pink"> ✿</span>
+				</p>
+
 				<h3>Event</h3>
 				<ul className="package-list">
 					<li>
@@ -35,20 +34,42 @@ function About() {
 				<h3>Headshots</h3>
 				<ul className="package-list">
 					<li>
-						<span className="pink">✿ </span>$400
+						<span className="pink">✿ </span>$300
 					</li>
 					<li>
-						<span className="pink">✿ </span>White Backdrop Studio
+						<span className="pink">✿ </span>white backdrop at The Denn Boca
 					</li>
 					<li>
-						<span className="pink">✿ </span>1 hour of prep (if applicable- hair, make up, choosing
-						outfits)
+						<span className="pink">✿ </span>2 outfit changes
 					</li>
 					<li>
-						<span className="pink">✿ </span>1 hour of shooting
+						<span className="pink">✿ </span>1-2 hours of prep (if applicable- hair, make up,
+						choosing outfits)
+					</li>
+					<li>
+						<span className="pink">✿ </span>30 minutes of shooting
 					</li>
 				</ul>
-				<h3>Portrait + Lifestyle</h3>
+				<h3>Portrait + Lifestyle 1 hr</h3>
+				<ul className="package-list">
+					<li>
+						<span className="pink">✿ </span>$450
+					</li>
+					<li>
+						<span className="pink">✿ </span>1 location of choice
+					</li>
+					<li>
+						<span className="pink">✿ </span>3 outfit changes
+					</li>
+					<li>
+						<span className="pink">✿ </span>1-2 hours of prep (if applicable- hair, make up,
+						choosing outfits)
+					</li>
+					<li>
+						<span className="pink">✿ </span>1 hours of shooting
+					</li>
+				</ul>
+				<h3>Portrait + Lifestyle 2 hr</h3>
 				<ul className="package-list">
 					<li>
 						<span className="pink">✿ </span>$800
@@ -57,76 +78,44 @@ function About() {
 						<span className="pink">✿ </span>2 locations of choice
 					</li>
 					<li>
-						<span className="pink">✿ </span>3 outfit changes
+						<span className="pink">✿ </span>3-6 outfit changes
 					</li>
 					<li>
-						<span className="pink">✿ </span>1 hour of prep (if applicable- hair, make up, choosing
-						outfits)
+						<span className="pink">✿ </span> 1-2 hours of prep (if applicable- hair, make up,
+						choosing outfits)
 					</li>
 					<li>
-						<span className="pink">✿ </span>1.5 hours of shooting
+						<span className="pink">✿ </span>2 hours of shooting
 					</li>
 				</ul>
-				<h3>Boudoir</h3>
-				<ul className="package-list">
-					<li>
-						<span className="pink">✿ </span>$800
-					</li>
-					<li>
-						<span className="pink">✿ </span>1 locations of choice
-					</li>
-					<li>
-						<span className="pink">✿ </span>3 outfit changes
-					</li>
-					<li>
-						<span className="pink">✿ </span> 1 hour of prep (if applicable- hair, make up, choosing
-						outfits)
-					</li>
-					<li>
-						<span className="pink">✿ </span>1.5 hours of shooting
-					</li>
-				</ul>
-				<p>
-					<i>
-						These are never shared on social media uncensored or without permission. They are
-						intended to be for husband/partner&apos;s eyes only !!!
-					</i>
-				</p>
 				<h3>Add-Ons</h3>
 				<ul className="package-list">
 					<li>
-						<span className="pink">✿ </span>Make up - $60
+						<span className="pink">✿ </span>Make up - $100 - Hair $75 - Both $160
 					</li>
 					<li>
-						<span className="pink">✿ </span>Hair - $70
+						<span className="pink">✿ </span>Printed Album - $250
 					</li>
 					<li>
-						<span className="pink">✿ </span>Printing Album - $200
+						<span className="pink">✿ </span>Reels Starting at $200 per reel
 					</li>
 					<li>
-						<span className="pink">✿ </span>White Backdrop Studio - $100
+						<span className="pink">✿ </span>Videography starting at $500 per hour
 					</li>
 				</ul>
-				<div className="centered">
-					<ul>
-						<li>
-							Primary studio is the Denn Boca located at: 4160 NE 1st Ave, Boca Raton, FL 33431,
-							Unit 16. @thedennboca
-						</li>
-						<li>
-							Buy 2 or more packages at once to receive a significant discount OR work with me on a
-							regular basis, and your rate goes down forever. I&apos;m all about efficiency,
-							consistency, and good company, and I&apos;m here to make us grow.
-						</li>
-					</ul>
-					<div className="flower-break">
-						<span className="pink">✿ </span>
-						<span className="pink"> ✿ </span>
-						<span className="pink">✿ </span>
-					</div>
+				<ul>
+					<li>Possible travel fee of $50-$100.</li>
+					<li>
+						PRIMARY STUDIO is my own: The Denn Boca 4160 NE 1st Ave, Boca Raton, FL 33431, Unit 16.
+					</li>
+				</ul>
+				<div className="flower-break">
+					<span className="pink">✿ </span>
+					<span className="pink"> ✿ </span>
+					<span className="pink">✿ </span>
 				</div>
 
-				<h3>Wedding I.</h3>
+				<h3>Wedding Low Key</h3>
 				<ul className="package-list">
 					<li>
 						<span className="pink">✿ </span>$1400
@@ -138,12 +127,16 @@ function About() {
 						<span className="pink">✿ </span>1 Photographer
 					</li>
 					<li>
+						<span className="pink">✿ </span>Photographer&rsquo;s favorites edited in separate
+						digital album
+					</li>
+					<li>
 						<span className="pink">✿ </span>Medium sized wedding album made, printed, and delivered
 						to Bride and Groom 2-3 months after wedding
 					</li>
 				</ul>
 
-				<h3>Wedding II.</h3>
+				<h3>Wedding High Key</h3>
 				<ul className="package-list">
 					<li>
 						<span className="pink">✿ </span>$2400
@@ -153,6 +146,10 @@ function About() {
 					</li>
 					<li>
 						<span className="pink">✿ </span>2 Photographers
+					</li>
+					<li>
+						<span className="pink">✿ </span>Photographer&rsquo;s favorites edited in separate
+						digital album
 					</li>
 					<li>
 						<span className="pink">✿ </span>Medium sized wedding album made, printed, and delivered
@@ -166,11 +163,12 @@ function About() {
 					<span className="pink">✿ </span>
 				</div>
 
-				<div className="centered questionnaire">
+				<div className="questionnaire">
 					<p>
-						Once you decide on what package you&apos;d like, I will have you fill out this
-						Questionnaire (copy and paste it in an email) and send to{' '}
-						<a href="mailto: susiejetta@gmail.com">susiejetta@gmail.com</a>{' '}
+						<span className="pink">✿ </span>Before you book via my Booksy link, it is preferable if
+						you fill out this questionnaire by copying and pasting it into an email link{' '}
+						<a href="mailto:susiejetta@gmail.com">susiejetta@gmail.com</a> just so I can gather more
+						information.
 					</p>
 					<ol>
 						<li>
@@ -178,49 +176,37 @@ function About() {
 							<span className="pink"> ✿ ~ </span>
 						</li>
 						<li>
-							What package are you looking to do?<span className="pink"> ✿ ~ </span>
-						</li>
-						<li>
-							What days and times would you prefer/When are you looking to get the photos back by?
-							<span className="pink"> ✿ ~ </span>
-						</li>
-						<li>
 							What location(s) do you have in mind? I have many we can choose from if needed.
 							<span className="pink"> ✿ ~ </span>
 						</li>
 						<li>
-							What are you envisioning for your session/What type of “vibe” are you going for?
+							What are you envisioning for your session? What type of “vibe” are you going for? Do
+							you need help choosing which package to book?
 							<span className="pink"> ✿ ~ </span>
 						</li>
 						<li>
 							What questions do you have for me?<span className="pink"> ✿ ~ </span>
 						</li>
-						<li>
-							Do you need to choose your photos for edit or would you prefer I choose or both?
-							<span className="pink"> ✿ ~ </span>
-						</li>
 					</ol>
 				</div>
 
-				<ul className="package-list final-thoughts">
-					<li>
-						<span className="pink">✿ </span>ONCE you send BACK your Questionnaire and I review it, I
-						will get back to you letting you know if I&apos;m free! If I am available, I will send
-						you a Welcome email, a Scope of Work to sign, and an invoice for you to leave a deposit.
-						This is how I secure your spot!
-					</li>
-					<li>
-						<span className="pink">✿ </span>After I receive your signed Scope of Work and deposit
-						and everything is good to go, we will go over dates, times, and all the details via
-						text! (I&apos;m a big texter, never be afraid to text me photos ideas or questions!) If
-						we aim to shoot outdoors, we may have to play the weather by ear and adjust as needed.
-						However, if the reschedules are on your end, I allow 3 pardons, after that it is $50
-						per!
-					</li>
-				</ul>
-
-				<p>I pray we get to work together. 💕</p>
-				<p>Talk to you soon! ~ SJ</p>
+				<p>
+					<span className="pink">✿ </span>After I receive this, I will respond via email or I will
+					request to set up a call. We will then book your appointment via Booksy where you pay for
+					your package up front, sign a scope of work/consent form, receive your confirmation, and
+					be good to go!
+				</p>
+				<p>
+					(As of October 2023, I require a 100% deposit to book, so payment is squared up right
+					away. If you wish to cancel your session, you will receive a 50% refund. I allow 3
+					reschedules then it is $50 per.)
+				</p>
+				<p>
+					I&rsquo;m a big texter, never be afraid to text me photos, ideas, or questions! If we aim
+					to shoot outdoors, we may have to play the weather by ear and adjust as needed. I pray we
+					get to work together. 💕
+				</p>
+				<p>Talk to you soon! ~ SJG</p>
 
 				<div className="logo-container">
 					<img src={logo} alt="Susie Jetta" />
