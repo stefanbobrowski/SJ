@@ -66,7 +66,7 @@ function About() {
 						choosing outfits)
 					</li>
 					<li>
-						<span className="pink">✿ </span>1 hours of shooting
+						<span className="pink">✿ </span>1 hour of shooting
 					</li>
 				</ul>
 				<h3>Portrait + Lifestyle 2 hr</h3>
