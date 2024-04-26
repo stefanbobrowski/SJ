@@ -17,7 +17,7 @@ smoothscroll.polyfill();
 function Album(props) {
 	// State
 	// const apiUrl = 'http://localhost:3003';
-	const apiUrl = 'https://susiejetta.com/api';
+	const apiUrl = 'https://susie-jetta.com/api';
 
 	const [dataSize, setDataSize] = useState(0);
 	const [currentPage, setCurrentPage] = useState(0);
