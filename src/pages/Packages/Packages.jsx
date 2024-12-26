@@ -12,9 +12,9 @@ function About() {
 				<p>
 					I am here to style you and pose you in a way that is most flattering to you, I am here to
 					effortlessly capture you, and possibly I am here to make you ugly laugh. <i>Most</i> of my
-					clients have never {'('}willingly{')'} stepped in front of a camera, and don&amp;t realize
-					how photogenic they can be. I take extreme pride in being the first person to capture the
-					pure potential most people don&amp;t realize they have. Give me the posed and
+					clients have never {'('}willingly{')'} stepped in front of a camera, and don&apos;t
+					realize how photogenic they can be. I take extreme pride in being the first person to
+					capture the pure potential most people don&apos;t realize they have. Give me the posed and
 					form-perfect, give me the raw and relatable, and anything and all in between.
 				</p>
 				<div className="flower-break">
@@ -123,7 +123,7 @@ function About() {
 						<i>
 							package{'('}s{')'}
 						</i>{' '}
-						you&amp;re interested in, and <i>dates/times</i> you are available to
+						you&pos;re interested in, and <i>dates/times</i> you are available to
 						susiejetta@gmail.com.
 					</li>
 				</ul>
@@ -229,7 +229,7 @@ function About() {
 					</li>
 				</ul>
 
-				<div className="flower-break">
+				<div className="flower-break-single">
 					<span className="pink">✿ </span>
 				</div>
 
