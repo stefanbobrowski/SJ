@@ -1,13 +1,13 @@
 @import './reset.scss';
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lora&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lora&display=swap');
 
 .App {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	// font-family: 'Comfortaa', cursive;
-	font-family: 'Cutive Mono', monospace;
+	font-family: 'Comfortaa', cursive;
+	// font-family: 'Cutive Mono', monospace;
 	color: #000;
 }
 

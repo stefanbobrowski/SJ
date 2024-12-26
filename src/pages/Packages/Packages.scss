@@ -4,7 +4,7 @@
 	font-size: 1rem;
 
 	.packages-container {
-		max-width: 660px;
+		max-width: 900px;
 		margin: 0 auto;
 		padding: 1rem 0;
 	}
@@ -22,6 +22,11 @@
 		margin: 0;
 		padding-left: 0;
 		list-style-type: none;
+	}
+
+	.centered-list {
+		text-align: center;
+		margin-block: 4rem;
 	}
 
 	.pink {

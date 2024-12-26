@@ -8,105 +8,123 @@ function About() {
 	return (
 		<div className="page packages">
 			<div className="packages-container">
-				<h2>
-					Packages
-					<span className="pink"> ✿</span>
-				</h2>
-
+				<h2 className="pink">SUSIE JETTA MAKE UP AND PHOTOGRAPHY</h2>
 				<p>
-					<span className="pink">✿ </span>
-					For ALL packages you receive ALL usable images sent back via a non-expiring Dropbox
-					folder, ready for download and share, plus 10 edits of choice. (Editing includes light
-					retouching, fixing blemishes, distractions, hair, slight tweaking of body, etc.) Receive
-					significant discounts when you buy 2 or more packages or work with me on a regular basis!
-					<span className="pink"> ✿</span>
+					I am here to style you and pose you in a way that is most flattering to you, I am here to
+					effortlessly capture you, and possibly I am here to make you ugly laugh. <i>Most</i> of my
+					clients have never {'('}willingly{')'} stepped in front of a camera, and don&amp;t realize
+					how photogenic they can be. I take extreme pride in being the first person to capture the
+					pure potential most people don&amp;t realize they have. Give me the posed and
+					form-perfect, give me the raw and relatable, and anything and all in between.
 				</p>
-
+				<div className="flower-break">
+					<span className="pink">✿ </span>
+					<span className="pink">✿ </span>
+					<span className="pink">✿ </span>
+				</div>
+				<h2 className="pink">SJP Packages</h2>
 				<h3>Event</h3>
 				<ul className="package-list">
 					<li>
-						<span className="pink">✿ </span>$150 per hour
+						<span className="pink">✿ </span>$200 per hour
+					</li>
+					<li>
+						<span className="pink">✿ </span>Photographing candids, details, posed, group, individual
+						shots
 					</li>
 					<li>
 						<span className="pink">✿ </span>2 hours minimum
 					</li>
-				</ul>
-				<h3>Headshots</h3>
-				<ul className="package-list">
 					<li>
-						<span className="pink">✿ </span>$300
+						<span className="pink">✿ </span>All edited images on a non-expiring Dropbox folder,
+						ready for download and share
 					</li>
 					<li>
-						<span className="pink">✿ </span>white backdrop at The Denn Boca
+						<span className="pink">✿ </span>Up to 15 miles of travel from East Boca
 					</li>
 					<li>
-						<span className="pink">✿ </span>2 outfit changes
-					</li>
-					<li>
-						<span className="pink">✿ </span>1-2 hours of prep (if applicable- hair, make up,
-						choosing outfits)
-					</li>
-					<li>
-						<span className="pink">✿ </span>30 minutes of shooting
+						<span className="pink">✿ </span>Printing rights
 					</li>
 				</ul>
-				<h3>Portrait + Lifestyle 1 hr</h3>
+				<h3>30 Minute Session</h3>
 				<ul className="package-list">
 					<li>
-						<span className="pink">✿ </span>$450
+						<span className="pink">✿ </span>$350
 					</li>
 					<li>
-						<span className="pink">✿ </span>1 location of choice
+						<span className="pink">✿ </span>White backdrop at The Denn Boca
 					</li>
 					<li>
 						<span className="pink">✿ </span>3 outfit changes
 					</li>
 					<li>
-						<span className="pink">✿ </span>1-2 hours of prep (if applicable- hair, make up,
-						choosing outfits)
+						<span className="pink">✿ </span>30 minutes of shooting
+					</li>
+					<li>
+						<span className="pink">✿ </span>All edited images on a non-expiring Dropbox folder,
+						ready for download and share
+					</li>
+					<li>
+						<span className="pink">✿ </span>Printing rights
+					</li>
+				</ul>
+				<h3>1 Hour Session</h3>
+				<ul className="package-list">
+					<li>
+						<span className="pink">✿ </span>$500
+					</li>
+					<li>
+						<span className="pink">✿ </span>White backdrop at The Denn Boca or 1 location of choice
+					</li>
+					<li>
+						<span className="pink">✿ </span>6 outfit changes
 					</li>
 					<li>
 						<span className="pink">✿ </span>1 hour of shooting
 					</li>
-				</ul>
-				<h3>Portrait + Lifestyle 2 hr</h3>
-				<ul className="package-list">
 					<li>
-						<span className="pink">✿ </span>$800
+						<span className="pink">✿ </span>All edited images on a non-expiring Dropbox folder,
+						ready for download and share
 					</li>
 					<li>
-						<span className="pink">✿ </span>2 locations of choice
-					</li>
-					<li>
-						<span className="pink">✿ </span>3-6 outfit changes
-					</li>
-					<li>
-						<span className="pink">✿ </span> 1-2 hours of prep (if applicable- hair, make up,
-						choosing outfits)
-					</li>
-					<li>
-						<span className="pink">✿ </span>2 hours of shooting
+						<span className="pink">✿ </span>Printing rights
 					</li>
 				</ul>
 				<h3>Add-Ons</h3>
 				<ul className="package-list">
 					<li>
-						<span className="pink">✿ </span>Make up - $100 - Hair $75 - Both $160
+						<span className="pink">✿ </span>Make up - $160
 					</li>
 					<li>
-						<span className="pink">✿ </span>Printed Album - $250
+						<span className="pink">✿ </span>Hair - $160
 					</li>
 					<li>
-						<span className="pink">✿ </span>Reels Starting at $200 per reel
+						<span className="pink">✿ </span>Hair and Make-up - $250
 					</li>
 					<li>
-						<span className="pink">✿ </span>Videography starting at $500 per hour
+						<span className="pink">✿ </span>iPhone Raw Video Footage - $100/hour
+					</li>
+					<li>
+						<span className="pink">✿ </span>Professional Video + Audio - $1000 for 4 hours, 15
+						minute edited video or three 1 minute edited videos
 					</li>
 				</ul>
-				<ul>
-					<li>Possible travel fee of $50-$100.</li>
+				<ul className="centered-list">
 					<li>
-						PRIMARY STUDIO is my own: The Denn Boca 4160 NE 1st Ave, Boca Raton, FL 33431, Unit 16.
+						The studio is called The Denn Boca and is located in East Boca, at 4160 NW 1st Ave, Unit
+						16, Boca Raton, FL 33431. Inquire about rentals and event rates.
+					</li>
+					<li>
+						A 50% non-refundable deposit is required at least 2 weeks prior to booking. 2
+						reschedules are allowed.
+					</li>
+					<li>
+						To book, please email your <i>full name</i>, <i>phone number</i>, <i>email</i>,{' '}
+						<i>
+							package{'('}s{')'}
+						</i>{' '}
+						you&amp;re interested in, and <i>dates/times</i> you are available to
+						susiejetta@gmail.com.
 					</li>
 				</ul>
 				<div className="flower-break">
@@ -114,103 +132,110 @@ function About() {
 					<span className="pink"> ✿ </span>
 					<span className="pink">✿ </span>
 				</div>
+				<h2 className="pink">SJP WEDDING AND EVENT</h2>
 
-				<h3>Wedding Low Key</h3>
+				<h3>Wedding 1.0</h3>
 				<ul className="package-list">
 					<li>
-						<span className="pink">✿ </span>$1400
-					</li>
-					<li>
-						<span className="pink">✿ </span>5 hours of coverage
+						<span className="pink">✿ </span>5 hours of photography coverage
 					</li>
 					<li>
 						<span className="pink">✿ </span>1 Photographer
 					</li>
 					<li>
-						<span className="pink">✿ </span>Photographer&rsquo;s favorites edited in separate
-						digital album
+						<span className="pink">✿ </span>All images on a non-expiring Dropbox folder, ready for
+						download and share
+					</li>
+					<li>
+						<span className="pink">✿ </span>Printing rights
 					</li>
 					<li>
 						<span className="pink">✿ </span>Medium sized wedding album made, printed, and delivered
 						to Bride and Groom 2-3 months after wedding
 					</li>
+					<li>
+						<span className="pink">✿ </span>$2000
+					</li>
 				</ul>
 
-				<h3>Wedding High Key</h3>
+				<h3>Wedding 2.0</h3>
 				<ul className="package-list">
 					<li>
-						<span className="pink">✿ </span>$2400
+						<span className="pink">✿ </span>1 hour long engagement session in-studio. 2 outfits plus
+						hair and make-up included
 					</li>
 					<li>
-						<span className="pink">✿ </span>10 hours of coverage
+						<span className="pink">✿ </span>10 hours of Day of photography coverage
 					</li>
 					<li>
 						<span className="pink">✿ </span>2 Photographers
 					</li>
 					<li>
-						<span className="pink">✿ </span>Photographer&rsquo;s favorites edited in separate
-						digital album
+						<span className="pink">✿ </span>All images on a non-expiring Dropbox folder, ready for
+						download and share
 					</li>
 					<li>
-						<span className="pink">✿ </span>Medium sized wedding album made, printed, and delivered
-						to Bride and Groom 2-3 months after wedding
+						<span className="pink">✿ </span>Printing rights
+					</li>
+					<li>
+						<span className="pink">✿ </span>Medium-sized wedding album made, printed, and delivered
+						or mailed to Bride and Groom
+					</li>
+					<li>
+						<span className="pink">✿ </span>$3500
+					</li>
+				</ul>
+
+				<h3>Lead Composer</h3>
+				<ul className="package-list">
+					<li>
+						<span className="pink">✿ </span>A wedding/event planner, Day of best friend, and
+						photographer; all-in-one.
+					</li>
+					<li>
+						<span className="pink">✿ </span>PLANNING - We plan the event at least 2 months prior to
+						your chosen date. This indlues: regular communincation via phone, text, and email to aid
+						you with finding SJP verified vendors {'('}beauty teams, DJ&apos;s, locations,
+						decorators, event staff, caterers, bakeries{')'} that work with your preferred budget.
+						We then create a simple yet beatufiul day of timeline together.
+					</li>
+					<li>
+						<span className="pink">✿ </span>DAY OF COORDINATION - I physically lead the day and all
+						of it&apos;s moving parts so our timeline runs smoothly and effectively. You will be
+						able to do your job; relax.
+					</li>
+					<li>
+						<span className="pink">✿ </span>8 HOURS OF PHOTOGRAPHY COVERAGE - I physically
+						photograph the day. There will be 2 of us photographers and 1 assistant, so there will
+						be no shortage of hands to make sure everything is getting covered. All images will be
+						sent back via a non-expiring Dropbox folder, ready for download and share. Includes
+						printing rights and a medium-sized wedding album made, printed, and delivered or mailed
+						to Bride and Groom.
+					</li>
+					<li>
+						<span className="pink">✿ </span>$6000
+					</li>
+				</ul>
+
+				<ul className="centered-list">
+					<li>
+						To book wedding services, please email your <i>full name</i>, <i>phone number</i>,{' '}
+						<i>email</i>,{' '}
+						<i>
+							package{'('}s{')'}
+						</i>{' '}
+						you&apos;re interested in, and <i>dates/times</i> you&apos;d need services to
+						susiejetta@gmail.com.
 					</li>
 				</ul>
 
 				<div className="flower-break">
 					<span className="pink">✿ </span>
-					<span className="pink"> ✿ </span>
-					<span className="pink">✿ </span>
 				</div>
 
-				<div className="questionnaire">
-					<p>
-						<span className="pink">✿ </span>Before you book via my Booksy link, it is preferable if
-						you fill out this questionnaire by copying and pasting it into an email link{' '}
-						<a href="mailto:susiejetta@gmail.com">susiejetta@gmail.com</a> just so I can gather more
-						information.
-					</p>
-					<ol>
-						<li>
-							What is your name, phone number, instagram, and location?
-							<span className="pink"> ✿ ~ </span>
-						</li>
-						<li>
-							What location(s) do you have in mind? I have many we can choose from if needed.
-							<span className="pink"> ✿ ~ </span>
-						</li>
-						<li>
-							What are you envisioning for your session? What type of “vibe” are you going for? Do
-							you need help choosing which package to book?
-							<span className="pink"> ✿ ~ </span>
-						</li>
-						<li>
-							What questions do you have for me?<span className="pink"> ✿ ~ </span>
-						</li>
-					</ol>
-				</div>
-
-				<p>
-					<span className="pink">✿ </span>After I receive this, I will respond via email or I will
-					request to set up a call. We will then book your appointment via Booksy where you pay for
-					your package up front, sign a scope of work/consent form, receive your confirmation, and
-					be good to go!
-				</p>
-				<p>
-					(As of October 2023, I require a 100% deposit to book, so payment is squared up right
-					away. If you wish to cancel your session, you will receive a 50% refund. I allow 3
-					reschedules then it is $50 per.)
-				</p>
-				<p>
-					I&rsquo;m a big texter, never be afraid to text me photos, ideas, or questions! If we aim
-					to shoot outdoors, we may have to play the weather by ear and adjust as needed. I pray we
-					get to work together. 💕
-				</p>
-				<p>Talk to you soon! ~ SJG</p>
-
-				<div className="logo-container">
+				{/* <div className="logo-container">
 					<img src={logo} alt="Susie Jetta" />
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
