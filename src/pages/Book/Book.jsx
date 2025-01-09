@@ -5,9 +5,11 @@ function Book() {
 	return (
 		<div className="page book">
 			<h2>Book now</h2>
-			<a href="https://thedennboca.booksy.com" target="_blank" rel="noreferrer">
-				Click here to book a photoshoot, hair, make up, or studio rentals
-			</a>
+			<p>
+				To book please email your full name, package{'('}s{')'} you&apos;re interested in,
+				dates/times, email, and phone number to{' '}
+				<a href="mailto:susiejetta@gmail.com">susiejetta@gmail.com</a>
+			</p>
 		</div>
 	);
 }
